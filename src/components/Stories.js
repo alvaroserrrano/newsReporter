@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getLatestStoriesIds } from '../controllers/index';
+import Story from './Story';
 
 const Stories = () => {
   const [storyIds, setStoryIds] = useState([]);
@@ -8,7 +9,14 @@ const Stories = () => {
     getLatestStoriesIds().then(stories => setStoryIds(stories));
   }, []);
 
-  return <p>{JSON.stringify(storyIds)}</p>;
+  return (
+    <>
+      <h1>Hacker News Stories</h1>
+      {storyIds.map(storyId => (
+        <Story storyId={storyId} key={storyId}></Story>
+      ))}
+    </>
+  );
 };
 
 export default Stories;

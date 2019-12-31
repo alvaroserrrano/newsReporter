@@ -10,23 +10,23 @@ export const singleStoryUrl = `${baseUrl}item/`;
 
 export const getLatestStoriesIds = async () => {
   const result = await axios.get(latestStoriesUrl).then(({ data }) => data);
-  console.log(result);
+  // console.log(result);
   return result;
 };
 
 export const getTopStoriesIds = async () => {
   const result = await axios.get(topStoriesUrl).then(({ data }) => data);
-  console.log(result);
+  // console.log(result);
   return result;
 };
 
 export const getBestStoriesIds = async () => {
   const result = await axios.get(bestStoriesUrl).then(({ data }) => data);
-  console.log(result);
+  // console.log(result);
   return result;
 };
 
-export const getStoryId = async storyId => {
+export const getStory = async storyId => {
   const result = await axios
     .get(`${singleStoryUrl + storyId}.json`)
     .then(({ data }) => data);
